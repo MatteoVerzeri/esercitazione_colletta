@@ -15,7 +15,11 @@ namespace esercitazione_colletta
         Dictionary<string, double> persone = new Dictionary<string, double>();
         public void aggiunta(double cifra, string nome)
         {
-            persone[nome] = cifra;
+            
+                persone[nome] = cifra;
+            
+        
+            
         }
         public void rimozione(double cifra, string nome)
         {
@@ -28,7 +32,7 @@ namespace esercitazione_colletta
             string a = null;
             foreach(KeyValuePair<string, double> s in persone)
             {
-                a += s.Key + Convert.ToDouble(s.Value) + "\n";
+                a += s.Key + " " + Convert.ToDouble(s.Value) + "\n";
             }
                 
             
@@ -46,22 +50,54 @@ namespace esercitazione_colletta
 
         private void button1_Click(object sender, EventArgs e)
         {
-            aggiunta(double.Parse(textBox2.Text), textBox1.Text);
+            try
+            {
+                aggiunta(double.Parse(textBox2.Text), textBox1.Text);
+            }
+            catch
+            {
+                MessageBox.Show("devi inserire un numero nella seconda textbox");
+            }
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            rimozione(double.Parse(textBox2.Text), textBox1.Text);
+            try
+            {
+                rimozione(double.Parse(textBox2.Text), textBox1.Text);
+            }
+            catch
+            {
+                MessageBox.Show("devi inserire un numero nella seconda textbox");
+            }
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            aggiunta(double.Parse(textBox2.Text), textBox1.Text);
+            try
+            {
+                aggiunta(double.Parse(textBox2.Text), textBox1.Text);
+            }
+            catch
+            {
+                MessageBox.Show("devi inserire un numero nella seconda textbox");
+            }
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            visualizza();
+            string a = null;
+            foreach (KeyValuePair<string, double> s in persone)
+            {
+                a += s.Key + " " + Convert.ToDouble(s.Value) + "\n";
+            }
+            if (a != null)
+                visualizza();
+            else
+                MessageBox.Show("non c'è nulla attualmente");
         }
     }
 }
