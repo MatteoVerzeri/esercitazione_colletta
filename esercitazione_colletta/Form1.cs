@@ -64,11 +64,16 @@ namespace esercitazione_colletta
         private void button5_Click(object sender, EventArgs e)
         {
             string tmp = null;
-            foreach (KeyValuePair<Colletta, Importo> kvp in tabella)
+            foreach (KeyValuePair<Colletta, Importo> kvp1 in tabella)
             {
-                tmp = tmp + kvp.ToString() + "\n";
+                tmp = tmp + kvp1.ToString() + "\n";
             }
             MessageBox.Show(tmp);
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            var sortedtabella = new SortedDictionary<Colletta, Importo>(tabella);
         }
     }
 }

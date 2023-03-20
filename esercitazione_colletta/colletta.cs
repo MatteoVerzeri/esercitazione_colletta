@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace esercitazione_colletta
 {
-    public class Colletta : IEquatable<Colletta>
+    public class Colletta : IComparable<Colletta>
     {
+        protected Colletta colletta;
+       
 
         public Colletta(string id, string cognome, string nome)
         {
@@ -52,5 +54,9 @@ namespace esercitazione_colletta
         {
 
         }*/
+        public int CompareTo(Colletta c)
+        {
+            return Nome.CompareTo(c.Nome);
+        }
     }
 }
