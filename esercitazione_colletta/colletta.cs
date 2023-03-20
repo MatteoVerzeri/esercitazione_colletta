@@ -48,6 +48,9 @@ namespace esercitazione_colletta
         {
             return Id + " " + Cognome + " " + Nome;
         }
+        /*public void aggiungi(Colletta p, Importo i)
+        {
 
+        }*/
     }
 }
