@@ -35,8 +35,9 @@ namespace esercitazione_colletta
 
         public override int GetHashCode()
         {
-            return Id.GetHashCode();
+            return (Id, Nome, Cognome).GetHashCode();
         }
+        
 
         public override bool Equals(Object o)
         {
@@ -58,5 +59,7 @@ namespace esercitazione_colletta
         {
             return Nome.CompareTo(c.Nome);
         }
+        
+
     }
 }

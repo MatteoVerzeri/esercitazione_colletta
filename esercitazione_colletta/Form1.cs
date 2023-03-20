@@ -72,8 +72,9 @@ namespace esercitazione_colletta
         }
 
         private void button6_Click(object sender, EventArgs e)
-        {
-            var sortedtabella = new SortedDictionary<Colletta, Importo>(tabella);
+        { 
+            SortedDictionary<Colletta, Importo> ordinato = new SortedDictionary<Colletta, Importo>(tabella);
+            tabella = new Dictionary<Colletta, Importo>(ordinato);
         }
     }
 }
